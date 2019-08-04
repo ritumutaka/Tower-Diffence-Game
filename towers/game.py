@@ -1,13 +1,14 @@
 import pygame
 import os
-from enemies.scorpion import Scorpiton
+from enemies.scorpion import Scorpion
+import time
 
 class Game:
     def __init__(self):
         self.width = 1000
         self.height = 700
         self.win = pygame.display.set_mode((self.width, self.height))
-        self.enemys = [Scorpiton()]
+        self.enemys = [Scorpion()]
         self.towers = []
         self.lives = 10
         self.money = 100
@@ -33,6 +34,10 @@ class Game:
 
     def draw(self):
         self.win.blit(self.bg, (0, 0))
+
+        for en in self.enemys:
+            en.draw(self.win)
+
         pygame.display.update()
 
 

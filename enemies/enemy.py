@@ -1,17 +1,19 @@
 import pygame
 import math
 
+
 class Enemy:
     imgs = []
-    def __init__(self, x, y, width, height):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
+
+    def __init__(self):
+        self.width = 64
+        self.height = 64
         self.animation_count = 0
         self.health = 1
         self.vel = 3
         self.path = [(4, 382), (163, 383), (166, 178), (363, 180), (367, 446), (625, 450), (634, 321), (994, 315)]
+        self.x = self.path[0][0]
+        self.y = self.path[0][1]
         self.img = None
         self.path_pos = 0
         self.move_speed = 1
@@ -34,12 +36,12 @@ class Enemy:
     def collide(self, X, Y):
         """
         受け取った座標に敵がいるかを返す
-        :param x: int
-        :param y: int
+        :param X: int
+        :param Y: int
         :return: Bool
         """
-        if X <= self.x + self.width and X >= self.x:
-            if Y <= self.y + self.height and Y >= self.y:
+        if self.x <= X <= self.x + self.width:
+            if self.y <= Y <= self.y + self.height:
                 return True
 
         return False
@@ -49,20 +51,20 @@ class Enemy:
         敵の移動
         :return: None
         """
-        x1, y1 = self.path[self.path_pos]
         if self.path_pos + 1 >= len(self.path):
+            x1, y1 = self.path[-2][0], self.path[-2][1]
             x2, y2 = self.path[-1][0] + 10, self.path[-1][1] + 0
         else:
-            x2, y2 = self.path[self.path_pos+1]
+            x1, y1 = self.path[self.path_pos]
+            x2, y2 = self.path[self.path_pos + 1]
 
-        move_dirction = (x2 - x1) / (y2 - y1)
-        self.x = (self.x + 1) * self.move_speed
-        self.y = (self.x * move_dirction) * self.move_speed
+        # TODO: 敵の移動
 
-        if x2 - self.move_speed / 2 <= self.x or self.x <= x2 + self.move_speed / 2 \
-        and y2 - self.move_speed / 2 <= self.y or self.y <= y2 + self.move_speed / 2:
+        # self.x = self.x + self.move_speed * move_direction_x
+        # self.y = self.y + self.move_speed * move_direction_y
+
+        if (x2 - self.x) ** 2 < self.move_speed and (y2 - self.y) ** 2 < self.move_speed:
             self.path_pos += 1
-
 
     def hit(self):
         """
