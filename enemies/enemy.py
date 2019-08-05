@@ -1,5 +1,6 @@
 import pygame
 import math
+import random
 
 
 class Enemy:
@@ -11,9 +12,8 @@ class Enemy:
         self.animation_count = 0
         self.health = 1
         self.vel = 3
-        self.path = [(4, 382), (163, 383), (166, 178), (363, 180), (367, 446), (625, 450), (634, 321), (994, 315)]
-        self.x = self.path[0][0]
-        self.y = self.path[0][1]
+        self.x = random.randint(-100, -self.width)
+        self.y = random.randint(0, 700-self.height)
         self.img = None
         self.path_pos = 0
         self.move_speed = 1
@@ -51,17 +51,7 @@ class Enemy:
         敵の移動
         :return: None
         """
-        if self.path_pos + 1 >= len(self.path):
-            x1, y1 = self.path[-2][0], self.path[-2][1]
-            x2, y2 = self.path[-1][0] + 10, self.path[-1][1] + 0
-        else:
-            x1, y1 = self.path[self.path_pos]
-            x2, y2 = self.path[self.path_pos + 1]
-
-        self.x = self.x + 1
-
-        if (x2 - self.x) ** 2 < self.move_speed and (y2 - self.y) ** 2 < self.move_speed:
-            self.path_pos += 1
+        self.x = self.x + 2
 
     def hit(self):
         """

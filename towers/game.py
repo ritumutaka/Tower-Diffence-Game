@@ -1,6 +1,7 @@
 import pygame
 import os
 from enemies.scorpion import Scorpion
+from enemies.wizerd import Wizerd
 import time
 
 class Game:
@@ -8,7 +9,7 @@ class Game:
         self.width = 1000
         self.height = 700
         self.win = pygame.display.set_mode((self.width, self.height))
-        self.enemys = [Scorpion()]
+        self.enemys = [Scorpion(), Wizerd()]
         self.towers = []
         self.lives = 10
         self.money = 100
