@@ -58,10 +58,7 @@ class Enemy:
             x1, y1 = self.path[self.path_pos]
             x2, y2 = self.path[self.path_pos + 1]
 
-        # TODO: 敵の移動
-
-        # self.x = self.x + self.move_speed * move_direction_x
-        # self.y = self.y + self.move_speed * move_direction_y
+        self.x = self.x + 1
 
         if (x2 - self.x) ** 2 < self.move_speed and (y2 - self.y) ** 2 < self.move_speed:
             self.path_pos += 1
