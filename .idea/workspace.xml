@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="620d776b-b549-4dec-99fd-e9aca0f42616" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/enemies/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemies/enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_assets/enemies/monster/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/game_assets/enemies/monster/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_assets/support_towers/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/game_assets/towers/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/towers/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/towers/game.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MyGames$game__1_.coverage" NAME="game (1) Coverage Results" MODIFIED="1564998255759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/towers" />
+    <SUITE FILE_PATH="coverage/MyGames$game__1_.coverage" NAME="game (1) Coverage Results" MODIFIED="1564999002482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/towers" />
     <SUITE FILE_PATH="coverage/Game$game.coverage" NAME="game Coverage Results" MODIFIED="1561871787523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tower-Defense-Game" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -46,13 +46,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="png" value="6" />
+          <entry key="png" value="10" />
           <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="6" />
+          <entry key="Image" value="10" />
           <entry key="Python" value="4" />
         </counts>
       </usages-collector>
@@ -72,25 +72,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/towers/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="280">
+              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1564486150873" expanded="true" signature="86:1095" ph="..." />
-                <marker date="1564486150873" expanded="true" signature="110:524" ph="..." />
+                <marker date="1564999002463" expanded="true" signature="86:1087" ph="..." />
+                <marker date="1564999002463" expanded="true" signature="110:516" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/enemies/enemy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+            <state relative-caret-position="-20">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -126,8 +126,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/enemies/scorpion.py" />
-        <option value="$PROJECT_DIR$/towers/game.py" />
         <option value="$PROJECT_DIR$/enemies/enemy.py" />
+        <option value="$PROJECT_DIR$/towers/game.py" />
       </list>
     </option>
   </component>
@@ -171,6 +171,20 @@
             <path>
               <item name="MyGames" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGames" type="462c0819:PsiDirectoryNode" />
+              <item name="game_assets" type="462c0819:PsiDirectoryNode" />
+              <item name="enemies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGames" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGames" type="462c0819:PsiDirectoryNode" />
+              <item name="game_assets" type="462c0819:PsiDirectoryNode" />
+              <item name="enemies" type="462c0819:PsiDirectoryNode" />
+              <item name="monster" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGames" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGames" type="462c0819:PsiDirectoryNode" />
+              <item name="game_assets" type="462c0819:PsiDirectoryNode" />
               <item name="towers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -317,7 +331,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32939634" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -381,24 +395,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/towers/game.py">
+    <entry file="file://$PROJECT_DIR$/game_assets/enemies/monster/240x240/pipo-enemy036b.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_assets/enemies/monster/240x240/pipo-enemy035a.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_assets/enemies/monster/240x240/pipo-enemy034a.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_assets/towers/bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/enemies/enemy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="-20">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1564486150873" expanded="true" signature="86:1095" ph="..." />
-            <marker date="1564486150873" expanded="true" signature="110:524" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/enemies/enemy.py">
+    <entry file="file://$PROJECT_DIR$/towers/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+        <state relative-caret-position="280">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1564999002463" expanded="true" signature="86:1087" ph="..." />
+            <marker date="1564999002463" expanded="true" signature="110:516" ph="..." />
           </folding>
         </state>
       </provider>
