@@ -2,7 +2,8 @@ import pygame
 import os
 from enemies.scorpion import Scorpion
 from enemies.wizerd import Wizerd
-import time
+from towers.archerTower import ArcherTowerLong
+
 
 class Game:
     def __init__(self):
@@ -10,10 +11,10 @@ class Game:
         self.height = 700
         self.win = pygame.display.set_mode((self.width, self.height))
         self.enemys = [Scorpion(), Wizerd()]
-        self.towers = []
+        self.towers = [ArcherTowerLong(300, 300)]
         self.lives = 10
         self.money = 100
-        self.bg = pygame.image.load(os.path.join("..", "game_assets", "towers",  "bg.png"))
+        self.bg = pygame.image.load(os.path.join("..", "game_assets", "towers", "bg.png"))
         self.bg = pygame.transform.scale(self.bg, (self.width, self.height))
 
     def run(self):
@@ -36,8 +37,13 @@ class Game:
     def draw(self):
         self.win.blit(self.bg, (0, 0))
 
+        # 敵を描画する
         for en in self.enemys:
             en.draw(self.win)
+
+        # タワーを描画する
+        for tw in self.towers:
+            tw.draw(self.win)
 
         pygame.display.update()
 
