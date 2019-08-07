@@ -30,6 +30,14 @@ class Game:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     pass
 
+            # 敵が画面の右端をすぎたら削除
+            for en in self.enemys:
+                if en.x > self.width + 100:
+                    self.enemys.remove(en)
+
+            for tw in self.towers:
+                tw.attack(self.enemys)
+
             self.draw()
 
         pygame.quit()

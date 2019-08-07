@@ -1,6 +1,7 @@
 import pygame
 from .tower import Tower
 import os
+import math
 
 tower_imgs = []
 for x in range(3):
@@ -19,16 +20,28 @@ class ArcherTowerLong(Tower):
         self.tower_imgs = tower_imgs[:]
         self.archer_imgs = archer_imgs[:]
         self.archer_count = 1
+        self.range = 200
+        self.inRange = False
 
     def draw(self, win):
         super().draw(win)
-        if self.archer_count >= len(self.archer_imgs) * 3: # 3倍することで描画をゆっくりにする
+        if self.inRange:
+            self.archer_count += 1
+            if self.archer_count >= len(self.archer_imgs) * 3:  # 3倍することで描画をゆっくりにする
+                self.archer_count = 0
+        else:
             self.archer_count = 0
 
         archer = self.archer_imgs[self.archer_count // 3]
         win.blit(archer, ((self.x + self.width/2) - archer.get_width()/2, self.y - archer.get_height()))
 
-        self.archer_count += 1
+    def change_range(self, r):
+        """
+        攻撃範囲を更新
+        :param r: int
+        :return: None
+        """
+        self.range = r
 
     def attack(self, enemies):
         """
@@ -37,4 +50,14 @@ class ArcherTowerLong(Tower):
         :param enemies: list
         :return: None
         """
-        pass
+        self.inRange = False
+        enemy_closest = []
+        for enemy in enemies:
+            x = enemy.x
+            y = enemy.y
+
+            dis = math.sqrt((x - self.x) ** 2 + (y - self.y) ** 2)
+            if dis <= self.range:
+                self.inRange = True
+                enemy_closest.append(enemy)
+
