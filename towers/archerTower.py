@@ -24,6 +24,12 @@ class ArcherTowerLong(Tower):
         self.inRange = False
 
     def draw(self, win):
+        # rangeの円を描画
+        circle_surface = pygame.Surface((self.range*2, self.range*2), pygame.SRCALPHA, 32)
+        pygame.draw.circle(circle_surface, (0, 255, 0, 100), (self.range, self.range), self.range, 0)
+
+        win.blit(circle_surface, (self.x - self.range, self.y - self.range))
+
         super().draw(win)
         if self.inRange:
             self.archer_count += 1
@@ -53,8 +59,8 @@ class ArcherTowerLong(Tower):
         self.inRange = False
         enemy_closest = []
         for enemy in enemies:
-            x = enemy.x
-            y = enemy.y
+            x = enemy.x - self.width/2
+            y = enemy.y - self.height/2
 
             dis = math.sqrt((x - self.x) ** 2 + (y - self.y) ** 2)
             if dis <= self.range:

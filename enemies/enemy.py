@@ -31,6 +31,7 @@ class Enemy:
 
         self.img = self.imgs[self.animation_count]
         win.blit(self.img, (self.x, self.y))
+        # pygame.draw.circle(win, (255, 0, 0), (self.x, self.y), 5) # 座標確認用
         self.move()
 
     def collide(self, X, Y):
