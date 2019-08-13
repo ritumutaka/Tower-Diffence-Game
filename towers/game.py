@@ -14,7 +14,7 @@ class Game:
         self.towers = [ArcherTowerLong(300, 300)]
         self.lives = 10
         self.money = 100
-        self.bg = pygame.image.load(os.path.join("..", "game_assets", "towers", "bg.png"))
+        self.bg = pygame.image.load(os.path.join("..", "game_assets", "MAP.png"))
         self.bg = pygame.transform.scale(self.bg, (self.width, self.height))
 
     def run(self):

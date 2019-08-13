@@ -26,10 +26,10 @@ class Enemy:
         """
         self.animation_count += 1
 
-        if self.animation_count >= len(self.imgs):
+        if self.animation_count >= len(self.imgs) * 2:  # 2倍することで描画スピードを遅くする
             self.animation_count = 0
 
-        self.img = self.imgs[self.animation_count]
+        self.img = self.imgs[self.animation_count // 2]
         win.blit(self.img, (self.x, self.y))
         # pygame.draw.circle(win, (255, 0, 0), (self.x, self.y), 5) # 座標確認用
         self.move()
