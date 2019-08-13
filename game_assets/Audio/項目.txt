@@ -1,0 +1,43 @@
+文字列で参照する時のコピペ用
+
+・/AUDIO
+
+BGM1         軍隊っぽい曲
+BGM1_intro   イントロのみ
+BGM1_less    イントロ抜き　ループ用
+BGM2         適当
+BGM3         陽気な曲
+
+
+・/SE
+
+8bit          ロックマンっぽいSE
+8bit2
+8bit3
+8bit4
+8bit5
+8bit6
+8bit7
+8bit9
+8bit10
+8bit11
+8bit12
+8bit13
+Bomb          爆発音(音量でかい)
+Coin    
+Damage
+Damage2
+Damage3
+Explosion 58    
+Explosion 124
+Explosion 129
+Explosion2
+Extincion1
+fanfare       トランペット(音量でかい)
+miss           回避
+monster        怪物の声
+piano
+SE1           ゲームっぽいSE
+SE2
+SE3
+up
