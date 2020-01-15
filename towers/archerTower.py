@@ -1,5 +1,5 @@
 import pygame
-from .tower import Tower
+from .tower import Tower, Bullet
 import os
 import math
 
@@ -22,6 +22,7 @@ class ArcherTowerLong(Tower):
         self.archer_count = 1
         self.range = 200
         self.inRange = False
+        self.attack_power = 1
 
     def draw(self, win):
         # rangeの円を描画
@@ -49,7 +50,7 @@ class ArcherTowerLong(Tower):
         """
         self.range = r
 
-    def attack(self, enemies):
+    def attack(self, enemies, win):
         """
         敵を攻撃する処理
         敵のリストを渡して、そのリストを処理
@@ -66,4 +67,38 @@ class ArcherTowerLong(Tower):
             if dis <= self.range:
                 self.inRange = True
                 enemy_closest.append(enemy)
+
+        # あくまでレンジ内にいる敵のHPを減らす処理(描画は含まない)
+        if enemy_closest:
+            first_enemy = enemy_closest[0]
+            first_enemy.health -= self.attack_power
+
+        # 下は範囲攻撃の場合に役立ちそう？
+        # for inRange_enemy in enemy_closest:
+        #     arrow(self.x, self.y).move_to_enemy(inRange_enemy, win)
+
+        # enemy_closest.sort(key=lambda x: x.x)
+        # first_enemy = enemy_closest[0]
+
+
+class arrow(Bullet):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.rad = 0
+        self.speed = 10
+        self.bullet_imgs = []
+        for x in range(1, 4):
+            self.bullet_imgs.append(pygame.transform.scale(
+                pygame.image.load(os.path.join("../game_assets/tama" + '{:01x}'.format(x) + '.png')), (120, 120)))
+
+    def move_to_enemy(self, enemy, win):
+        self.rad = math.atan2(enemy.x - self.x, enemy.y - self.y)
+        move_x = math.cos(self.rad * math.pi / 180) * 10
+        move_y = math.sin(self.rad * math.pi / 180) * 10
+        self.x = self.x + move_x
+        self.y = self.y + move_y
+        super().draw(win)
+
+        if self.x == enemy.x and self.y == enemy.y:
+            pass
 

@@ -35,8 +35,14 @@ class Game:
                 if en.x > self.width + 100:
                     self.enemys.remove(en)
 
+            # タワーの攻撃処理
             for tw in self.towers:
-                tw.attack(self.enemys)
+                tw.attack(self.enemys, self.win)
+
+            # 敵のHPを確認し、0を下回ったら削除
+            for enemy in self.enemys:
+                if enemy.health <= 0:
+                    self.enemys.remove(enemy)
 
             self.draw()
 
